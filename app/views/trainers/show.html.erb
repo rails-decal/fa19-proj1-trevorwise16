@@ -7,13 +7,18 @@
       <th>Sprite</th>
       <th>Name</th>
       <th>Level</th>
+      <th>Health</th>
+      <th>Damage?</th>
     </tr>
     <%  @trainer.pokemons.each do |pokemon| %>
       <tr>
         <th> <%= image_tag("pokemon/#{pokemon.ndex}.png", alt: "pokemon") %></th>
         <th> <%= pokemon.name %> </th>
         <th> <%= pokemon.level %> </th>
+        <th> <%= pokemon.health %></th>
+        <th> <%= button_to "Damage!", damage_path(id: @pokemon), :class => "button medium", :method => :patch, :params => {:id => pokemon.id}%> </th>
       </tr>
     <% end %>
   </Table>
+  <%= button_to "New Pokemon", new_path, :class => "button medium", :method => :get %>
 <% end %>
