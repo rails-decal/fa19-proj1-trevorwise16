@@ -18,7 +18,8 @@
 # I passed in :root, which is fine because this symbol is already tied to a path.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
-#
+#It stores the error in the flash object in the state in which it was triggered, then used in the next action to display
+#the error explaining what went wrong in the previous action.
 
 # Give us feedback on the project and decal below!
 
